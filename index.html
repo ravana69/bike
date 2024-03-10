@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bike Age Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .container {
+            margin-top: 30px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>My Bike Age</h1>
+        <img src="https://raw.githubusercontent.com/ravana69/bike/main/royalenfield-classic-gunmetal-grey.jpg" alt="Royal Enfield Bike">
+        <p>Your Royal Enfield bike was purchased on June 8, 2020.</p>
+        <!-- JavaScript to calculate time elapsed -->
+        <p id="timeElapsed"></p>
+    </div>
+    <script>
+        // Calculate time elapsed since bike purchase date
+        var purchaseDate = new Date('2020-06-08');
+        var currentDate = new Date();
+        var timeDiff = currentDate.getTime() - purchaseDate.getTime();
+        var daysElapsed = Math.floor(timeDiff / (1000 * 3600 * 24));
+        
+        // Calculate years and months elapsed
+        var yearsElapsed = Math.floor(daysElapsed / 365);
+        var monthsElapsed = Math.floor((daysElapsed % 365) / 30);
+
+        // Display time elapsed in days, years, and months format
+        document.getElementById("timeElapsed").innerText = "Time elapsed since purchase: " + daysElapsed + " days (" + yearsElapsed + " years, " + monthsElapsed + " months)";
+    </script>
+</body>
+</html>
+
